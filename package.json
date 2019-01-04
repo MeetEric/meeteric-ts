@@ -1,6 +1,6 @@
 {
-  "name": "",
-  "version": "0.0.0",
+  "name": "meeteric-js",
+  "version": "0.0.1",
   "main": "./bundle",
   "scripts": {
     "build": "tsc --build tsconfig.json",
