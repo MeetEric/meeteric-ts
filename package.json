@@ -19,7 +19,8 @@
   "license": "MIT",
   "dependencies": {
     "@types/lodash": "^4.14.103",
-    "@types/node": "^9.4.6"
+    "@types/node": "^9.4.6",
+    "winston": "^3.1.0"
   },
   "devDependencies": {
     "@types/chai": "^4.1.7",
