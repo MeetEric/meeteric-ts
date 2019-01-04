@@ -23,3 +23,10 @@ steps:
 - script: |
     npm run test-withreport
   displayName: 'npm test-withreport'
+
+- task: PublishTestResults@2
+  inputs:
+    mergeTestResults: true
+    testResultsFiles: '**/test-results.xml'
+  displayName: 'Publish Test Results'
+
