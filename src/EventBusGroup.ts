@@ -1,7 +1,7 @@
-import { IEventBus } from './interfaces';
+import { IEventBusWriter } from './interfaces';
 
-export class EventBusGroup implements IEventBus {
-    private readonly clients: IEventBus[];
+export class EventBusGroup implements IEventBusWriter {
+    private readonly clients: IEventBusWriter[];
 
     constructor() {
         this.clients = [];
@@ -30,7 +30,7 @@ export class EventBusGroup implements IEventBus {
         await Promise.all(promises);
     }
 
-    public AddEventBus(client: IEventBus) {
+    public AddEventBus(client: IEventBusWriter) {
         this.clients.push(client);
     }
 }

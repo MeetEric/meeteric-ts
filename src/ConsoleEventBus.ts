@@ -1,7 +1,7 @@
 import winston = require('winston');
-import { IEventBus } from './interfaces';
+import { IEventBusWriter } from './interfaces';
 
-export class ConsoleEventBus implements IEventBus {
+export class ConsoleEventBus implements IEventBusWriter {
     private readonly identifier: string;
 
     constructor() {
