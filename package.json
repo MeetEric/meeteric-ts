@@ -1,6 +1,6 @@
 {
   "name": "meeteric-ts",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "./bundle",
   "scripts": {
     "build": "tsc --build tsconfig.json",
@@ -15,6 +15,11 @@
     "url": "https://www.meeteric.net",
     "name": "Eric Maino",
     "email": "eric.maino@microsoft.com"
+  },
+  "description": "A collection of strongly typed context neutral contracts and implementations",
+  "repository": {
+    "type": "git",
+    "url" : "https://github.com/MeetEric/meeteric-ts"
   },
   "license": "MIT",
   "dependencies": {
