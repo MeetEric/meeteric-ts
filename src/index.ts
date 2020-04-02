@@ -1,4 +1,5 @@
 export * from './interfaces';
+export * as Collections from './collections';
 export * from './Environment';
 export * from './ConsoleEventBus';
 export * from './EventBusGroup';
