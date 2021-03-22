@@ -3,6 +3,8 @@
   "version": "0.2.3",
   "main": "./bundle",
   "scripts": {
+    "clean-release": "rm -rf ./release && rm -rf ./testresults",
+    "prebuild": "npm run clean-release",
     "build": "tsc --build tsconfig.json",
     "test": "mocha -r ts-node/register --recursive 'src/**/*Test*.ts' && npm run lint",
     "test-log" : "npm run build && node release/test/RunLog.js",
