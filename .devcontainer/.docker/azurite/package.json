@@ -1,0 +1,12 @@
+{
+    "name": "docker-azurite",
+    "version": "3.11.0",
+    "description": "Runs Azurite",
+    "license": "MIT",
+    "scripts": {
+      "start": "azurite -s -l /azurite"
+    },
+    "dependencies": {
+      "azurite": "^3.11.0"
+    }
+  }

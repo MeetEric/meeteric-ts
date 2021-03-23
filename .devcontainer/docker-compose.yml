@@ -1,0 +1,49 @@
+# This configuration used as reference
+# https://github.com/microsoft/vscode-dev-containers/tree/master/container-templates/docker-compose
+
+version: '3'
+
+services:
+  base:
+    image: node-dev-container-base
+    build:
+      context: ./.docker/base
+      dockerfile: Dockerfile
+      args:
+        VERSION: 14-buster
+  dev-container:
+    image: dev-container
+    build:
+      context: ./.docker/dev
+      dockerfile: Dockerfile
+    depends_on:
+      - base
+
+    volumes:
+    # This is where VS Code should expect to find your project's source code and the value of "workspaceFolder" in .devcontainer/devcontainer.json
+    - ..:/workspaces:cached
+
+    # Uncomment the next line to use Docker from inside the container. See https://aka.ms/vscode-remote/samples/docker-from-docker-compose for details.
+    # - /var/run/docker.sock:/var/run/docker.sock
+
+    # Overrides default command so things don't shut down after the process ends.
+    command: /bin/sh -c "while sleep 1000; do :; done"
+
+    # Runs app on the same network as the service container, allows "forwardPorts" in devcontainer.json function.
+    # network_mode: service:<service-name>
+
+    # Use "forwardPorts" in **devcontainer.json** to forward an app port locally.
+    # (Adding the "ports" property to this file will not forward from a Codespace.)
+
+    # Uncomment the next line to use a non-root user for all processes - See https://aka.ms/vscode-remote/containers/non-root for details.
+    # user: vscode
+
+  # Define services that you may need to your development like a Azurite (Azure Storage Emulator), a Database service and etc.
+  # azurite:
+  #   image: rigado-azure-reference-azurite
+  #   build:
+  #     context: ./.docker/azurite
+  #     dockerfile: Dockerfile
+  #   restart: unless-stopped
+  #   depends_on:
+  #     - base

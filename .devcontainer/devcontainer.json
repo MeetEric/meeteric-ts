@@ -1,0 +1,48 @@
+// For format details, see https://aka.ms/vscode-remote/devcontainer.json or the definition README at
+// https://github.com/microsoft/vscode-dev-containers/tree/master/containers/azure-functions-node-10
+{
+	"name": "Terraform & Node Az Functions",
+	"dockerComposeFile": "./docker-compose.yml",
+	"service": "dev-container",
+	"workspaceFolder": "/workspaces",
+	"forwardPorts": [
+		7071
+		// Azurite service ports
+		// ,10000
+		// ,10001
+	],
+	// Use 'settings' to set *default* container specific settings.json values on container create.
+	// You can edit these settings after create using File > Preferences > Settings > Remote.
+	"settings": {
+		"terminal.integrated.shell.linux": "/bin/bash",
+		"terraform.languageServer": {
+			"enabled": false
+		},
+		"debug.internalConsoleOptions": "neverOpen",
+		"editor.renderWhitespace": "boundary",
+		"editor.renderFinalNewline": true,
+		"files.eol": "\n",
+		"files.trimTrailingWhitespace": true
+	},
+	// Uncomment the next line to run commands after the container is created.
+	//"postCreateCommand": "cd terraform && terraform init && cd /",
+	//Uncomment the next line to run commands when the container starts (in all cases)
+	//"postStartCommand": "",
+	// Uncomment the next line to have VS Code connect as an existing non-root user in the container.
+	// On Linux, by default, the container user's UID/GID will be updated to match your local user. See
+	// https://aka.ms/vscode-remote/containers/non-root for details on adding a non-root user if none exist.
+	// "remoteUser": "node",
+	// Add the IDs of extensions you want installed when the container is created in the array below.
+	"extensions": [
+		"mauve.terraform",
+		"ms-azuretools.vscode-azureterraform",
+		"hashicorp.terraform",
+		"ms-vscode.azure-account",
+		"ms-vscode.azurecli",
+		"dbaeumer.vscode-eslint",
+		"mhutchie.git-graph",
+		"ms-vscode.vscode-typescript-tslint-plugin",
+		"vscode-icons-team.vscode-icons",
+		"streetsidesoftware.code-spell-checker"
+	]
+}

@@ -3,11 +3,13 @@
   "version": "0.2.3",
   "main": "./bundle",
   "scripts": {
+    "clean-release": "rm -rf ./release && rm -rf ./testresults",
+    "prebuild": "npm run clean-release",
     "build": "tsc --build tsconfig.json",
-    "test": "mocha --recursive release/**/*Test*.js && npm run lint",
+    "test": "mocha -r ts-node/register --recursive 'src/**/*Test*.ts' && npm run lint",
     "test-log" : "npm run build && node release/test/RunLog.js",
     "build-test": "npm run build && npm run test",
-    "test-withreport": "mocha --recursive release/**/*Test*.js --reporter mocha-junit-reporter --reporter-options mochaFile=./testresults/test-results.xml",
+    "test-withreport": "mocha -r ts-node/register --recursive 'src/**/*Test*.ts' --reporter mocha-junit-reporter --reporter-options mochaFile=./testresults/test-results.xml",
     "lint": "tslint -p tsconfig.json -t stylish",
     "copy-package": "copyfiles package.json ./release/",
     "package": "npm run copy-package && npm pack ./release"
