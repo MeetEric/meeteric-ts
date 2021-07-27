@@ -1,8 +1,8 @@
-export interface INotaryResult {
-    readonly signature : string;
-    readonly payload : any;
+export interface INotaryResult<T> {
+  readonly signature: string;
+  readonly payload: T;
 }
 
 export interface INotary {
-    GetSignature(content: any): Promise<INotaryResult>;
+  GetSignature<T>(content: T): Promise<INotaryResult<T>>;
 }

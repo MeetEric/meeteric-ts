@@ -1,13 +1,13 @@
-import { IIdentifier } from './interfaces';
+import {IIdentifier} from './interfaces';
 
 export class GenericIdentifier implements IIdentifier {
-    private readonly id: string;
+  private readonly id: string;
 
-    constructor(id: string) {
-        this.id = id;
-    }
+  constructor(id: string) {
+    this.id = id;
+  }
 
-    public AsString(): string {
-        return this.id;
-    }
+  public AsString(): string {
+    return this.id;
+  }
 }

@@ -1,0 +1,6 @@
+{
+  "extension": ["js"],
+  "spec": ["build/test/**/*.js"],
+  "recursive": true,
+  "require": ["source-map-support/register"]
+}

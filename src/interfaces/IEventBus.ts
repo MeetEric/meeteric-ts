@@ -1,11 +1,11 @@
 export interface IEventBusWriter {
-    Identifier(): string;
-    SendEvent(contents: any): Promise<void>;
+  Identifier(): string;
+  SendEvent<T>(contents: T): Promise<void>;
 }
 
 export interface IEventBusReader {
-    Identifier(): string;
-    ReadMessageAndDelete() : Promise<any>;
-    ReadMessageWithLock() : Promise<any>;
-    ReleaseAndDeleteMessage(lockedMessage: any) : Promise<void>;
+  Identifier(): string;
+  ReadMessageAndDelete<T>(): Promise<T>;
+  ReadMessageWithLock<T>(): Promise<T>;
+  ReleaseAndDeleteMessage<T>(lockedMessage: T): Promise<void>;
 }

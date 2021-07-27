@@ -51,3 +51,4 @@ test/localAssets
 
 # Ignore demo directory by default
 demo/
+build/

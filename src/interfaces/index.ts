@@ -4,4 +4,3 @@ export * from './IIdentifier';
 export * from './INotary';
 export * from './IEnumerator';
 export * from './IStorage';
-export * from './ISearchTree';

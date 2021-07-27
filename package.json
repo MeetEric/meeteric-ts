@@ -3,12 +3,15 @@
   "version": "0.2.3",
   "main": "./bundle",
   "scripts": {
-    "build": "tsc --build tsconfig.json",
-    "test": "mocha --recursive release/**/*Test*.js && npm run lint",
-    "test-log" : "npm run build && node release/test/RunLog.js",
-    "build-test": "npm run build && npm run test",
+    "build": "tsc",
+    "build-test": "npm run test",
+    "clean": "gts clean",
+    "gts-fix": "gts fix",
+    "lint": "gts lint",
+    "test": "mocha",
+    "prebuild-test": "npm run build",
+    "test-log": "npm run build && node release/test/RunLog.js",
     "test-withreport": "mocha --recursive release/**/*Test*.js --reporter mocha-junit-reporter --reporter-options mochaFile=./testresults/test-results.xml",
-    "lint": "tslint -p tsconfig.json -t stylish",
     "copy-package": "copyfiles package.json ./release/",
     "package": "npm run copy-package && npm pack ./release"
   },
@@ -20,30 +23,25 @@
   "description": "A collection of strongly typed context neutral contracts and implementations",
   "repository": {
     "type": "git",
-    "url" : "https://github.com/MeetEric/meeteric-ts"
+    "url": "https://github.com/MeetEric/meeteric-ts"
   },
   "license": "MIT",
   "dependencies": {
-    "@types/lodash": "^4.14.103",
-    "@types/node": "^9.4.6",
+    "@types/node": "^16.4.3",
     "winston": "^3.1.0"
   },
   "devDependencies": {
-    "@types/chai": "^4.1.7",
-    "@types/mocha": "^5.2.5",
+    "@types/chai": "^4.2.21",
+    "@types/mocha": "^9.0.0",
     "ajv": "^6.1.1",
     "ajv-keywords": "^3.1.0",
+    "chai": "^4.3.4",
     "copyfiles": "^2.1.0",
-    "chai": "^4.2.0",
     "del": "^3.0.0",
-    "lodash": "^4.17.5",
-    "mocha": "^5.2.0",
+    "gts": "^3.1.0",
+    "mocha": "^9.0.3",
     "mocha-junit-reporter": "^1.18.0",
-    "ncp": "^2.0.0",
-    "require-dir": "^1.0.0",
-    "ts-node": "3.3.0",
-    "tslint": "^5.11.0",
-    "tslint-microsoft-contrib": "^5.2.1",
-    "typescript": "^3.1.6"
+    "ts-node": "^10.1.0",
+    "typescript": "^4.3.5"
   }
 }
