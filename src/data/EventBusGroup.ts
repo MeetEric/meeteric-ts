@@ -1,4 +1,4 @@
-import {IEventBusWriter} from './interfaces';
+import {IEventBusWriter} from '../interfaces';
 
 export class EventBusGroup implements IEventBusWriter {
   private readonly clients: IEventBusWriter[];

@@ -1,8 +1,7 @@
 export * from './interfaces';
 export * as Telemetry from './telemetry';
 export * from './Environment';
-export * from './ConsoleEventBus';
-export * from './EventBusGroup';
-export * from './FileSystemStorage';
+export * as Data from './data';
+export * as Storage from './storage';
 export * from './GenericIdentifier';
 export * from './test';

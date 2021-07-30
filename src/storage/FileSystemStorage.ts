@@ -1,7 +1,7 @@
 import fs = require('fs');
 import path = require('path');
 
-import {IStorage} from './interfaces';
+import {IStorage} from '../interfaces';
 
 export class FileSystemStorage implements IStorage {
   private readonly dataRoot: string;
