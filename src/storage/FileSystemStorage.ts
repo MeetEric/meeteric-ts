@@ -16,6 +16,10 @@ export class FileSystemStorage implements IStorage {
     return this.identifier;
   }
 
+  public async Initialize(): Promise<void> {
+    return await this.EnsureDirectoryExists('.');
+  }
+
   public async ReadItem(itemPath: string): Promise<string> {
     return new Promise<string>((resolve, reject) => {
       fs.readFile(this.GetPath(itemPath), {encoding: 'utf8'}, (err, data) => {
